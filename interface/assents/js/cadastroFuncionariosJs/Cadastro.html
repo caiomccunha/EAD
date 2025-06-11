@@ -4,12 +4,12 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width= device-width, initial-scale=1.0"/>
         <title>Cadastro de Funcionários</title>
-        <link rel="stylesheet" href="/assents/css/style.css"/>
+        <link rel="stylesheet" href="/interface/assents/css/style.css"/>
     </head>
     <body>
         <div class="container">
             <h1>Cadastro</h1>
-            <form>"cadastroForm"
+            <form>
             
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required/>
@@ -38,10 +38,12 @@
             <label for="estado">Estado:</label>
             <input type="text" id="estado" name="Estado" required/>
                 
+            <button onclick="Adicionar()" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Adicionar</button>
             </form>
         </div>
-        <script src="../cadastroFuncionariosJs/cadastroFuncionario.js"></script>
-        <script>
-        </script>
+           
+        </div>
+
+            <script src="/interface/assents/js/cadastroFuncionariosJs/cadastroFuncionario.js"></script>
     </body>
 </html>
