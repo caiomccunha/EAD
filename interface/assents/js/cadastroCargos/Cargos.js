@@ -43,16 +43,18 @@ document.getElementById('cep')
 .addEventListener('focusout', pesquisarCep);*/
 
 const Adicionar = async () =>{
+    event.preventDefault();
     const cargos ={
         nome: document.getElementById('nome').value,
         descricao:document.getElementById('descricao').value
     }
+    console.log(cargos)
 
     try {
         const response = await fetch('http://localhost:8080/rh/cargos',{
             method: 'POST',
             headers:{'Content-Type' : 'application/json'},
-            body: JSON.stringify(funcionario)
+            body: JSON.stringify(cargos)
         });
 
         if(response.ok){

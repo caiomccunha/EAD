@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import rhAPI.demo.Model.cargosModel;
-import rhAPI.demo.Repository.cargoRepository;
 import rhAPI.demo.Service.cargosService;
 
 @RestController
