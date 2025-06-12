@@ -58,11 +58,23 @@ button {
     border: none;
     border-radius: 5px;
     text-align: center;
-    display: inline-block;
+    display: block;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 10px; /* 👈 Espaço entre os botões */
 }
+
+/* Estilo pro botão de editar */
+button.editar {
+    background-color: #199600;
+}
+
+/* Estilo pro botão de remover */
+button.remover {
+    background-color: #c00000;
+}
+
 
 button:hover {
     background-color: #0056b3;

@@ -65,6 +65,30 @@ const Adicionar = async () =>{
     }catch (error){
         console.error('Erro na requisição: ', error)
     }
+
+    const Editar = async(id) => {
+
+        event.preventDefault();
+        const cargos ={
+            nome: document.getElementById('nome').value,
+            descricao: document.getElementById('descricao').value
+        };
+
+        try{
+            const response = await fetch(`http://localhost:8080/rh/cargos/${id}`,{
+                method: 'PUT',
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify(cargos)
+            });
+            if(response.ok){
+                alert ('Cargo editado com sucesso!!');
+            }else{
+                alert('Erro ao editar informações')
+            }
+        }catch(error){
+            console.error('Erro na requisição: ', error)
+        }
+    }
 }
 
 
