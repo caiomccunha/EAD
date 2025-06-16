@@ -39,16 +39,26 @@ public class fcController {
         return service.buscarPorId(id).map(ResponseEntity :: ok).orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping ("/filtrar/{funcionario_id}/{cargo_id}")
+     @GetMapping ("/filtrar/funcionario/{funcionario_id}")
     public ResponseEntity <List <fCModel>> filtrar(
-       @PathVariable Long funcionario_id,
-       @PathVariable Long cargo_id) {
+       @PathVariable Long funcionario_id){
             List <fCModel> result;
 
             if(funcionario_id != null){
                 result = service.listarPorFuncionario(funcionario_id);
-            }else if (cargo_id != null) {
-                result = service.listarPorCargo(cargo_id);
+            }else {
+                result = service.listar();
+            }
+
+            return result.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(result);
+        }
+       @GetMapping ("/filtrar/cargo/{cargo_id}")
+    public ResponseEntity <List <fCModel>> filtro(
+       @PathVariable Long cargo_id){
+            List <fCModel> result;
+
+            if(cargo_id != null){
+                result = service.listarPorFuncionario(cargo_id);
             }else {
                 result = service.listar();
             }
@@ -71,7 +81,7 @@ public class fcController {
     }
 
     @DeleteMapping("/{id}")
-        public ResponseEntity <fCModel> deletar (@PathVariable Long id, @RequestBody fCModel fc){
+        public ResponseEntity <fCModel> deletar (@PathVariable Long id){
             if(!service.buscarPorId(id).isPresent()){
                 return ResponseEntity.notFound().build();
             }

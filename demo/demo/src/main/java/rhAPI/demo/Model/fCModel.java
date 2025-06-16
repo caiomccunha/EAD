@@ -24,9 +24,6 @@ public class fCModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 400, nullable = false)
-    private String detalhes;
-
     @ManyToOne
     @JoinColumn(name = "funcionario_id", nullable = false)
     private funcionariosModel funcionario;
@@ -34,6 +31,9 @@ public class fCModel {
     @ManyToOne
     @JoinColumn(name = "cargo_id", nullable = false)
     private cargosModel cargo;
+
+    @Column(length = 400, nullable = false)
+    private String detalhes;
 
     @Column(name = "data_inicio", nullable = false)
     private LocalDate data_inicio;

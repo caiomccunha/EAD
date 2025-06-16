@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cadastro de Funcionários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+     <div class="container mx-auto mt-8 p-4">
+      <h2 class="text-2xl font-bold mb-4">Cadastro de Funcionários</h2>
+      <form id="formCadastro" class="bg-white shadow-md rounded p-4" onsubmit="Adicionar()">
+        <div class="mb-4">
+          <label for="nome" class="block text-gray-700 font-bold mb-2">nome</label>
+          <input type="text" id="nome" class="w-full px-3 py-2 border rounded" required>
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-bold mb-2">email</label>
+            <input type="email" id="email" class="w-full px-3 py-2 border rounded" required >
+        </div>
+        <div class="mb-4">
+          <label for="Senha" class="block text-gray-700 font-bold mb-2">Senha</label>
+          <input type="password" id="senha" class="w-full px-3 py-2 border rounded" required>
+        </div>
+        <div class="mb-4">
+            <label for="Cep" class="block text-gray-700 font-bold mb-2">cep</label> 
+            <input type="text" id="cep" name="cep" required/>
+        </div>
+        <div class="mb-4">
+            <label for="Endereco" class="block text-gray-700 font-bold mb-2">endereco</label> 
+            <input type="text" name="endereco" id="endereco" required/>
+        </div>
+        <div class="mb-4">
+             <label for="Numero" class="block text-gray-700 font-bold mb-2">Numero</label>
+            <input type="text" id="numero" class="w-full px-3 py-2 border rounded" required/>
+        </div>
+        <div class="mb-4">
+            <label for="bairro" class="block text-gray-700 font-bold mb-2">Bairro</label>
+            <input type="text" name="bairro" id="bairro" class="w-full px-3 py-2 border rounded" required/>    
+        </div>
+        <div>
+            <label for="Cidade" class="block text-gray-700 font-bold mb-2">Cidade</label>
+            <input type="text" name="C  idade" id="cidade" class="w-full px-3 py-2 border rounded" required/>
+        </div>
+        <div>
+            <label for="estado" class="block text-gray-700 font-bold mb-2">Estado</label>
+            <input type="text" name="Estado" id="estado" class="w-full px-3 py-2 border rounded" required/>
+        </div>
+        
+        <button type="submit"  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Adicionar</button>
+      </form>
+            <h2 class="text-2xl font-bold mt-8 mb-4"> Tabela de Funcionários</h2>
+            <table class="w-full table-auto bg-white shadow-md rounded">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">nome</th>
+                        <th class="px-4 py-2">email</th>
+                        <th class="px-4 py-2">Senha</th>
+                        <th class="px-4 py-2">Cep</th>
+                        <th class="px-4 py-2">Endereco</th>
+                        <th class="px-4 py-2">Numero</th>
+                        <th class="px-4 py-2">Bairro</th>
+                        <th class="px-4 py-2">Cidade</th>
+                        <th class="px-4 py-2">Estado</th>
+                        <th class="px-4 py-2">Ação</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="tabelaFuncionarios">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/cadastroFuncionariosJs/cadastroFuncionario.js"></script>
+
+</body>
+</html>

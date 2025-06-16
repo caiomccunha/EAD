@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tabela de Vínculos</title>
+    </head>
+    <body class="bg-gray-100 min-h-screen">
+
+        <nav class="bg-gray-800 p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <a class="text-white font-bold text-x1" href="#">Programa de vínculo</a>
+            </div>
+            <div>
+                <a class="text-gray-300 hover: text-white mx-2" href="#">Início</a>
+            </div>
+        </nav>
+
+        <div class="container mx-auto mt-8 p-4">
+            <h2 class="text-2xl font-bold mb-4"> Cadastro de Vinculos</h2>
+            <form id="formCadastro" class="bg-white shadow-md rounded p-4" onsubmit="cadastrar()">
+                <div class="mb-4">
+                    <label for="funcionario" class="block text-gray-700 font-bold mb-2">Funcionario</label>
+                    <input type="text" id="funcionario" value="${funcionario}" name="funcionario" class="px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="cargo" class="block text-gray-700 font-bold mb-2">Cargo</label>
+                    <input type="text" id="cargo" value="${cargo}" name="cargo" class="px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="detalhes" class="block text-gray-700 font-bold mb-2">Detalhes</label>
+                    <input type="text" id="detalhes" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="data_inicio" class="block text-gray-700 font-bold mb-2">Data de Registro</label>
+                    <input type="date" id="data_inicio" name="data_inicio" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="data_fim" class="bg-white shadow-md rounded p-4">Data de Desligamento</label>
+                    <input type="date" id="data_fim" name="data_fim" class="w-full px-3 py-2 border rounded">
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover: bg-blue-600 ">Adicionar</button>
+            </form>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4"> Tabela de Vinculos</h2>
+            <table class="w-full table-auto bg-white shadow-md rounded">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">Funcionario</th>
+                        <th class="px-4 py-2">Cargo</th>
+                        <th class="px-4 py-2">Detalhes</th>
+                        <th class="px-4 py-2">Registro</th>
+                        <th class="px-4 py-2">Desligamento</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaVinculos">
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../js/Vinculo/Vinculo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        
+    </body>
+</html>
